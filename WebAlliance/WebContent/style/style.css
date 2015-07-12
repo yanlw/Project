@@ -1,0 +1,378 @@
+@charset "utf-8";
+section{ width:1200px; overflow:hidden; height:auto; margin:0 auto; margin-top:20px;}
+section .box_01,section .box_03{ width:290px; height:auto; margin-left:20px;}
+section .box_02{ width:540px; height:auto; margin-left:20px;}
+section .box_01 .bx01_01{ border:1px solid #dfdfde; height:262px; overflow:hidden; background:#fff}
+section .box_01 .bx01_01 p{ height:40px; line-height:40px;border-bottom:1px solid #dfdfde; font-size:16px; text-indent:20px; margin-bottom:15px;}
+section .box_01 .bx01_01 span{ display:inline-block; height:30px; line-height:30px; font-size:14px; text-align:right; width:76px; margin-top:20px;}
+section .box_01 .bx01_01 input{font-size:14px; padding:3px 10px; width:164px;border:1px solid #dfdfde;margin-top:20px;}
+section .box_01 .bx01_01 a{ display:inline-block; float:right; margin-top:10px; margin-bottom:4px; margin-right:22px;}
+section .box_01 .bx01_01 .lg_sub{ border:none; margin-top:16px; height:36px; line-height:36px; color:#fff; width:250px; text-align:center; font-size:14px; background:#ff7917; margin-left:20px;
+-webkit-transition: all 0.4s ease-in 0s; 
+-o-transition: all 0.4s ease-in 0s; 
+-moz-transition: all 0.4s ease-in 0s;
+transition: all 0.4s ease-in 0s;}
+section .box_01 .bx01_01 .lg_sub:hover{ background:#ff5517}
+section .box_01 .bx01_03,section .box_01 .bx01_04{ overflow:hidden}
+section .box_01 .bx01_03 span{ font-size:16px; height:30px; line-height:30px; display:inline-block;}
+section .box_01 .bx01_03 ul li{ float:left}
+section .box_01 .bx01_03 ul li a{ display:inline-block; width:80px; height:25px; line-height:25px; text-align:center;background:#e3e3e2; border-radius:5px; margin:15px 7px 0px; 
+-webkit-transition: all 0.4s ease-in 0s; 
+-o-transition: all 0.4s ease-in 0s; 
+-moz-transition: all 0.4s ease-in 0s;
+transition: all 0.4s ease-in 0s;}
+section .box_01 .bx01_03 ul li a:hover{ background:#5da7f5; color:#fff;}
+section .box_01 .bx01_04 span,
+section .box_02 .bx02_02 p span,
+section .box_02 .bx02_03 span,
+section .box_03 .bx03_01 span,
+section .box_03 .bx03_02 span,
+section .box_03 .bx03_03 span,
+section .box_01 .memb_02 span,
+section .box_01 .memb_03 span{ font-size:16px; height:30px; line-height:30px; display:inline-block;}
+section .box_01 .bx01_04 .more,
+section .box_02 .bx02_02 p .more,
+section .box_02 .bx02_03 .more,
+section .box_03 .bx03_01 .more,
+section .box_03 .bx03_02 .more,
+section .box_03 .bx03_03 .more,
+section .box_01 .memb_03 .more{ font-size:12px; height:30px; line-height:30px; display:inline-block; color:#999999}
+section .box_01 .bx01_04 ul{}
+section .box_01 .bx01_04 ul li,
+section .box_03 .bx03_01 ul li,
+section .box_03 .bx03_02 ul li,
+section .box_03 .bx03_03 ul li{ height:34px; line-height:34px; background:url(../images/bg_point.png) no-repeat 2px center; text-indent:18px;}
+section .box_01 .bx01_04 ul li a,
+section .box_03 .bx03_01 ul li a,
+section .box_03 .bx03_02 ul li a,
+section .box_03 .bx03_03 ul li a{ font-size:14px;}
+section .box_01 .bx01_04 ul li span,
+section .box_03 .bx03_01 ul li span,
+section .box_03 .bx03_02 ul li span,
+section .box_03 .bx03_03 ul li span{ float:right; font-size:12px;}
+
+
+#slider { width:540px; height:264px; }
+div#slideshow { float:left; width:100%; height:264px; overflow:hidden; }
+.slider-item { width:100% !important; height:264px; }
+.slider_content_inner img { border:none; }
+.controls-center { width:540px; margin:0 auto; }
+#slider_controls {position:relative; margin:0; z-index:1000; display:inline-block; top:-28px; left:50%; margin-left:-33px;}
+#slider_controls ul { margin:0 auto; padding:2px 3px; height:11px;}
+#slider_controls ul li { margin:0; padding:0; list-style:none; }
+#slider_controls ul li { float:left; display:block; }
+#slider_controls ul li a { width:11px; height:11px; background:url(../images/tabs_2.png) no-repeat center center; display:block; float:left; padding:0; margin:1px 3px; outline:none; display:inline-block }
+#slider_controls ul li a:focus { outline:none; }
+#slider_controls ul li a:hover, #slider_controls ul li a.activeSlide { background:url(../images/tabs_1.png) no-repeat center center; }
+
+
+section .box_02 .bx02_02,section .box_02 .bx02_03{ overflow:hidden}
+section .box_02 .bx02_02 p{ height:40px; line-height:40px; background:url(../images/bg_tg.png) repeat-x;  border-left:1px solid #dfdfde;border-right:1px solid #dfdfde;   }
+section .box_02 .bx02_02 p span{ margin-left:22px;}
+section .box_02 .bx02_02 p .more{ margin-right:22px;}
+section .box_02 .bx02_02 .seo{ background:#fff; border-left:1px solid #dfdfde;border-right:1px solid #dfdfde; overflow:hidden;}
+section .box_02 .bx02_02 .seo .so_01 .so_info{ line-height:34px; font-size:14px; padding:0px 20px; display:inline-block; text-indent:24px;}
+section .box_02 .bx02_02 .seo .so_01 i{ width:269px; float:left; font-style:normal; display:block; text-align:center; margin-top:14px; font-size:16px; padding-bottom:20px;}
+section .box_02 .bx02_02 .seo .so_01 i .seo_01{ width:90px; height:90px; background:url(../images/seo_01.png) no-repeat; display:block; margin:0 auto}
+section .box_02 .bx02_02 .seo .so_01 i .seo_02{ width:90px; height:90px; background:url(../images/seo_02.png) no-repeat; display:block; margin:0 auto}
+section .box_02 .bx02_02  ul li{ float:left;}
+section .box_02 .bx02_02  ul li a{ display:inline-block; width:270px; height:50px; line-height:50px; text-align:center; font-size:16px; color:#fff; background:#5da7f5;}
+section .box_02 .bx02_02  ul li a.so_active{ background:#ff8e16}
+section .box_02 .bx02_03 span i,
+section .box_03 .bx03_02 span i,
+section .box_03 .bx03_03 span i{ font-style:normal; color:#ff5517; margin-left:10px;}
+section .box_02 .bx02_03 ul.u_text { margin-top:10px;}
+section .box_02 .bx02_03 ul.u_text li{ float:left; height:30px; line-height:30px; background:url(../images/bg_adv_icon.png) no-repeat left center; width:180px; text-indent:16px;}
+section .box_02 .bx02_03 ul.u_pic{ width:560px; margin-left:-10px;}
+section .box_02 .bx02_03 ul.u_pic li{ float:left; margin:10px 10px 0px;}
+section .box_03 .bx03_04 .id_contact{ font-size:14px; line-height:32px;}
+section .box_03 .bx03_04 .id_contact i{ font-size:20px; color:#fa7308; margin-right:6px;}
+section .box_03 .bx03_04 .id_contact span{ font-size:14px; margin-left:96px;}
+section .box_03 .bx03_02 ul li,section .box_03 .bx03_03 ul li{ background:none; text-indent:0px;}
+section .box_03 .bx03_02 ul li span.num,section .box_03 .bx03_03 ul li span.num{ float:left; font-size:14px; display:inline-block; height:34px; line-height:34px; color:#666666; width:18px; text-align:left}
+section .box_03 .bx03_02 ul li span.org,section .box_03 .bx03_03 ul li span.org{ color:#ff5517;}
+
+
+
+/**************************************************   车险无忧-登录后页面  开始   ********************************************************************/
+section .box_01 .memb_01{ border:none; height:auto}
+section .box_01 .memb_01 p{ margin-bottom:0px;border:1px solid #dfdfde;}
+section .box_01 .memb_01 p a{ float:right; font-size:14px; color:#999999; margin:0px; margin-right:10px;}
+section .box_01 .memb_01 .tb_01{ width:100%;border-left:1px solid #dfdfde; font-size:14px;}
+section .box_01 .memb_01 .tb_01 tbody tr td { height:39px; line-height:39px; border-bottom:1px solid #dfdfde;border-right:1px solid #dfdfde; text-indent:20px;}
+section .box_01 .memb_01 .tb_01 tbody tr td a{ float:right; margin-right:10px; color:#4f8ed0; margin-top:0px;}
+section .box_01 .memb_02 ul{ overflow:hidden}
+section .box_01 .memb_02 ul li a{font-size:14px;  width:250px; height:35px; line-height:35px; background:url(../images/memb_li_bg.png) no-repeat; display:inline-block; padding-left:40px; margin-top:16px;}
+section .box_01 .memb_02 ul li a:hover{background:url(../images/memb_li__active_bg.png) no-repeat; color:#fff;}
+section .box_01 .memb_03 ul{ overflow:hidden; width:310px; margin-left:-10px;}
+section .box_01 .memb_03 ul li{ width:140px; float:left; margin-left:10px;}
+section .box_01 .memb_03 ul li a{font-size:14px;  border-radius:4px; width:140px; height:35px; line-height:35px; background:#e3e3e2; display:inline-block; text-align:center;margin-top:16px;}
+section .box_01 .memb_03 ul li a:hover{background:#5da7f5; color:#fff;}
+
+/**************************************************   车险无忧-登录后页面  结束   ********************************************************************/
+
+
+
+/**************************************************   车险无忧-详细信息（对公）  开始   ********************************************************************/
+.cnt_z{ width:1158px; border:1px solid #dedddd; background:#fff; margin:0 auto; overflow:hidden; margin-top:20px;box-shadow:#e6e6e6 0px 5px 5px;}
+.cnt_z .cnt_z_title{ height:70px; line-height:70px; font-size:30px; font-weight:700; color:#2aabe2; border-bottom:1px solid #f3f3f3; text-align:center;}
+.cnt_z .wr_z{ width:968px; margin:0 auto; padding-left:22px; padding-right:22px; overflow:hidden;}
+.cnt_z .wr_z .cnt_z_info{ margin-bottom:38px; height:70px; line-height:35px; color:#808080; background:#eff6fe;margin-top:10px;border-radius:5px; font-size:17px; padding-left:22px; padding-right:22px;  }
+.cnt_z .wr_z .mod_title{ height:48px; line-height:48px; font-size:24px;color:#2aabe2; border-bottom:1px solid #2aabe2; text-indent:22px;}
+.cnt_z .wr_z .mod_title .icont_num{height:48px; line-height:48px; font-size:26px;}
+.cnt_z .wr_z .notice{ float:left; width:604px; margin-left:50px; line-height:30px; margin-top:38px; font-size:18px;}
+.cnt_z .wr_z #zhao,.cnt_z .wr_z #identification{ width:280px; height:184px; border:1px solid #cee4fc; margin-top:20px; margin-bottom:40px;}
+.mg_bt_10{ margin-bottom:10px;}
+.mg_tp_30{ margin-top:30px;}
+.cnt_z .wr_z .fo{ height:56px; line-height:56px; padding-left:50px;}
+.cnt_z .wr_z .fo a{ display:inline-block; width:120px; height:34px; line-height:34px; text-align:center; color:#fff; background:#5ea7f6; font-size:14px; margin-left:10px; border-radius:2px;top:2px\9; position:relative; *top:-7px;}
+.cnt_z .wr_z .fo label{ font-size:18px; width:108px; text-align:right; display:inline-block}
+.cnt_z .wr_z .fo input{ font-size:14px; padding:6px 10px; width:244px; border:1px solid #808080; color:#acacac}
+.cnt_z .wr_z .fo span{ color:#919191; margin-left:10px;}
+.cnt_z .wr_z .fo_sub{ width:246px; height:46px; line-height:46px; text-align:center; color:#fff; background:#5ea7f6; font-size:18px; border:none; border-radius:4px; margin-left:380px; margin-top:70px; margin-bottom:40px;}
+
+
+
+
+
+/**************************************************   车险无忧-详细信息（对公）  结束   ********************************************************************/
+
+
+
+/**************************************************   车险无忧-详细信息（对私）  开始   ********************************************************************/
+
+/**************************************************   车险无忧-详细信息（对私）  结束   ********************************************************************/
+
+
+
+/**************************************************   车险无忧-邮箱激活  开始   ********************************************************************/
+.cnt_mail{ margin-bottom:142px; background:url(../images/smail.png) #fff 262px 70px no-repeat ;}
+.mail_intro{ width:796px; margin-left:380px; float:left; margin-top:70px; line-height:25px; font-size:18px; color:#888888; padding-bottom:90px;}
+.mail_intro a{ margin-top:30px; margin-bottom:50px; color:#fff; background:#5ea7f6; width:265px; height:46px; line-height:46px; text-align:center; font-size:18px; display:inline-block; border-radius:4px;}
+
+/**************************************************   车险无忧-邮箱激活  结束   ********************************************************************/
+
+
+
+
+/**************************************************   车险无忧-账号类型选择  开始   ********************************************************************/
+.cnt_acc{ width:1184px; margin:0 auto; height:auto; overflow:hidden;}
+.cnt_acc ul li{ float:left}
+.cnt_acc ul li a{ display:inline-block; width:570px; height:280px; line-height:280px; text-align:center; background:#fff; color:#5ea7f6; font-size:60px; font-weight:700; margin:80px 10px 120px 10px; box-shadow:#e6e6e6 0px 5px 5px; border:1px solid #dddcdc;}
+.cnt_acc ul li a:hover{ background:#5ea7f6; color:#fff;}
+/**************************************************   车险无忧-账号类型选择  结束   ********************************************************************/
+
+
+/**************************************************   车险无忧-注册  开始   ********************************************************************/
+.reg{ width:1158px; border:1px solid #dedddd; background:#fff; margin:0 auto; overflow:hidden;margin-top:20px;box-shadow:#e6e6e6 0px 5px 5px; margin-bottom:20px; }
+.reg .cnt_z_title{ height:70px; line-height:70px; font-size:30px; font-weight:700; color:#2aabe2; border-bottom:1px solid #f3f3f3; text-align:center}
+.reg .fr_z{ margin-left:370px; font-size:18px; overflow:hidden; margin-top:20px;}
+.reg .fr_z .lab{ width:94px; text-align:right; float:left; padding-top:34px;}
+.reg .fr_z .inp_z{overflow:hidden}
+.reg .fr_z .inp_z span,.reg  .fr_z .inp_z input,.reg .fr_z .inp_z .v_code,.reg .fr_z .inp_z .refrash{ float:left}
+.reg .fr_z .inp_z span{ font-size:12px; color:#808080; display:block; margin-top:10px; width:100%}
+.reg .fr_z .inp_z input{ width:244px; font-size:14px; padding:6px 10px; margin-top:4px; outline:none}
+.reg .vlidate_z .inp_z input { margin-top:24px}
+.reg .vlidate_z .inp_z .v_code{ margin-top:0px; margin-left:6px; margin-right:6px;}
+.reg .vlidate_z .inp_z .refrash{ font-size:12px; color:#2aabe2; display:inline-block; margin-top:20px;}
+.reg .accept{ margin-left:466px; margin-top:30px; margin-bottom:24px;}
+.reg .accept i{ width:11px; height:12px; background:url(../images/rd_def.png) left bottom no-repeat; display:inline-block; margin-right:4px; }
+.reg .accept i.rd_act{background:url(../images/rd_act.png) left bottom no-repeat;  }
+.reg .accept a:hover{ text-decoration:underline}
+.reg .fr_sub{ margin-left:466px; width:265px; height:46px; line-height:46px; text-align:center; color:#fff; background:#2aabe2; font-size:18px; border:none; border-radius:4px; margin-bottom:60px; }
+
+/**************************************************   车险无忧-注册  结束   ********************************************************************/
+
+
+
+
+/**************************************************   #003 车险无忧-银行账户管理  开始   ********************************************************************/
+.account{ width:870px; height:auto; overflow:hidden; margin-left:20px;}
+.account .ac_title{ height:40px; line-height:40px; background:#5da7f5; text-align:center; color:#fff; font-size:16px;}
+.account .ac_tab{ width:870px; border:1px solid #dfdfde; margin-top:24px; background:#fff; font-size:14px;}
+.account .ac_tab tbody tr td{ height:40px; padding-left:50px; border-right:1px dashed #dfdfde; border-bottom:1px dashed #dfdfde;}
+.account .ac_tab tbody tr td span{ color:#5da7f5}
+.account .ac_tab tbody tr td span i.red{ color:red; font-style:normal}
+.account .ac_tab tbody tr td input.ac_inp{ padding:2px 6px; width:190px; border:1px solid #dddddd; background:#f0f0f0}
+.account .ac_sm{ text-align:center}
+.account .ac_sm .ac_sub{ width:266px; height:46px; line-height:46px; text-align:center; color:#fff; background:#5da7f5; font-size:18px; border:none; border-radius:4px; margin-top:20px;}
+/**************************************************   #003 车险无忧-银行账户管理  结束   ********************************************************************/
+
+
+/**************************************************   #004 车险无忧-个人资料修改  开始   ********************************************************************/
+.account .ac_tab tbody tr td input.ac_rad{ margin-right:4px; position:relative; top:2px;}
+/**************************************************   #004 车险无忧-个人资料修改  结束   ********************************************************************/
+
+
+
+/**************************************************   #005 车险无忧-提现  开始   ********************************************************************/
+.account .ac_tab tbody tr td .ac_ck{ color:#5da7f5}
+.account .ac_info{ height:40px; line-height:40px; color:#f55f5c; font-size:14px; text-align:center;}
+.account .ac_tip{border:1px solid #dfdfde; background:#fff; margin-top:70px; padding:20px 48px; line-height:24px; font-size:14px; color:#999999 }
+.account .ac_tip .ac_col{color:#f55f5c;}
+/**************************************************   #005 车险无忧-提现  结束   ********************************************************************/
+
+
+
+/**************************************************   #006 车险无忧-提现明细  开始   ********************************************************************/
+.account .account_date .ac_tab .ac_date{ width:95px; height:24px; line-height:24px; background:url(../images/ca_date_bg.jpg) no-repeat; border:none; padding-left:10px;}
+.account .account_date .ac_tab .ac_to{ margin-left:6px; margin-right:6px; color:#2b2b2b;}
+.account .account_date{ position:relative}
+.account .ac_bt{ width:105px; text-align:center; height:24px; line-height:24px; color:#fff; background:#5da7f5; font-size:14px; border:none; border-radius:4px; margin-right:24px}
+.account .ac_more{color:#5da7f5}
+.account .account_date #divDate01{ left:242px; top:40px;}
+.account .account_date #divDate02{ left:372px; top:40px;}
+.account .ac_tab_list{width:870px; border:1px solid #dfdfde; margin-top:24px; background:#fff; font-size:14px; color:#a7a7a7}
+.account .ac_tab_list tbody tr td{ height:40px; border-right:1px dashed #dfdfde; border-bottom:1px dashed #dfdfde; text-align:center}
+.calendar { POSITION: absolute; WIDTH:190px; HEIGHT: 180px; PADDING:0;DISPLAY: none; FLOAT: left;border:1px solid #819dba;background:#fff;}
+.calendar .calMain { WIDTH:100%; HEIGHT:180px; FLOAT: left; OVERFLOW: hidden; POSITION: absolute; }
+.calendar .calMain .calTitle { WIDTH: 100%; FLOAT: left; HEIGHT: 23px; BACKGROUND: #fff; OVERFLOW: hidden; }
+.calendar .calMain .calTitle .t_date { WIDTH: 149px; FLOAT: left; HEIGHT: 23px; COLOR: #51729D; FONT-WEIGHT: bold; LINE-HEIGHT: 23px; TEXT-ALIGN: center; }
+.calendar .calMain .calTitle .prevMonth { WIDTH: 15px; HEIGHT: 15px; FLOAT: left; MARGIN: 8px 0 0 5px; CURSOR: pointer; BACKGROUND: url(../images/date_bg.png) no-repeat 5px -87px; }
+.calendar .calMain .calTitle .nextMonth { WIDTH: 15px; HEIGHT: 15px; FLOAT: right; MARGIN: 8px 5px 0 0; CURSOR: pointer; BACKGROUND: url(../images/date_bg.png) no-repeat 6px -157px; }
+.calendar .calMain .calTitle .currentYear { }
+.calendar .calMain .calTitle .currentMonth { }
+.calendar .calMain .calTitle .currentYearText { FLOAT: left; MARGIN: 0 0px 0 39px; CURSOR: pointer; }
+.calendar .calMain .calTitle .currentMonthText { FLOAT: left; CURSOR: pointer; WIDTH: 30px; TEXT-ALIGN: right; }
+.calendar .calMain .calContent { WIDTH: 378px; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .enabled { POSITION: absolute; WIDTH: 100%; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .reserve { POSITION: absolute; WIDTH:100%; HEIGHT: 157px; FLOAT: left; }
+.calendar .calMain .calContent .tabD { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabD th { BACKGROUND: url(../images/date_bg.png) repeat-x; LINE-HEIGHT: 22px; FONT-WEIGHT: normal; PADDING-BOTTOM: 4px; COLOR: #fff; }
+.calendar .calMain .calContent .tabD td { COLOR: #1F3959; TEXT-ALIGN: center; LINE-HEIGHT: 19px; WIDTH: 27px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabD td span { COLOR: #C0C0C0; }
+.calendar .calMain .calContent .tabD td a { WIDTH: 23px; LINE-HEIGHT: 18px; FLOAT: left; MARGIN: 1px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabD td .nextD { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabD td .prevD { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabD td .hover { WIDTH: 21px; LINE-HEIGHT: 16px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabD td .current { WIDTH: 21px; LINE-HEIGHT: 16px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabD td .select { WIDTH: 21px; LINE-HEIGHT: 16px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 1px 0 0 2px; }
+.calendar .calMain .calContent .tabM { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabM td { COLOR: #1F3959; TEXT-ALIGN: center; HEIGHT: 50px; WIDTH: 47px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabM td a { WIDTH: 42px; LINE-HEIGHT: 42px; FLOAT: left; MARGIN: 0px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabM td .hover { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabM td .current { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabM td .select { WIDTH: 40px; LINE-HEIGHT: 40px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY { WIDTH: 100%; FLOAT: left; BORDER-COLLAPSE: collapse; BORDER-SPACING: 0; BORDER: 0; }
+.calendar .calMain .calContent .tabY td { COLOR: #1F3959; TEXT-ALIGN: center; HEIGHT: 50px; WIDTH: 47px; FONT-FAMILY: "Georgia"; }
+.calendar .calMain .calContent .tabY td a { WIDTH: 42px; LINE-HEIGHT: 42px; FLOAT: left; MARGIN: 0px 0 0 2px; CURSOR: pointer; COLOR: #51729D; }
+.calendar .calMain .calContent .tabY td .nextY { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabY td .prevY { COLOR: #BCCADC; }
+.calendar .calMain .calContent .tabY td .hover { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #7D99BD; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY td .current { WIDTH: 40px; LINE-HEIGHT: 40px; BORDER: 1px solid #51729D; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain .calContent .tabY td .select { WIDTH: 40px; LINE-HEIGHT: 40px; BACKGROUND: #51729D; BORDER: 1px solid #51729D; COLOR: #fff; FLOAT: left; MARGIN: 0px 0 0 2px; }
+.calendar .calMain a:hover { TEXT-DECORATION: none; }
+/**************************************************   #006 车险无忧-提现明细  结束   ********************************************************************/
+
+
+
+/**************************************************   #009 车险无忧-快速获取推广代码-图片广告代码  开始   ********************************************************************/
+.account .ac_url{ color:#999999}
+.account .ac_url a{ color:#5da7f5}
+.account .ac_title a{ color:#fff;}
+.mg_tp_40{ margin-top:40px;}
+.mg_tp_20{ margin-top:20px;}
+.account .ac_adv{ border:1px solid #dfdfde; background:#fff; overflow:hidden;}
+.account .ac_adv ul.adv_list{ width:867px; margin-left:-1px;}
+.account .ac_adv ul.adv_list li{ cursor:pointer; width:288px; border-left:1px dashed #dfdfde; border-bottom:1px dashed #dfdfde; float:left; height:40px; line-height:40px;color:#999999; font-size:14px; text-align:center;}
+.account .ac_adv ul.adv_list li.curr_z{ background:#5da7f5; color:#fff;}
+.account .ac_adv ul.adv_cnt{ overflow:hidden}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_get{ float:left; width:318px; height:160px; text-align:center; line-height:160px; color:#999; font-size:14px; border-right:1px dashed #dfdfde;}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_cd_z{ width:549px; float:left}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_code{ width:380px; height:62px; overflow-y:scroll; font-size:14px; color:#999; margin-top:30px; margin-left:64px;}
+.account .ac_adv ul.adv_cnt li .step_z_01 .ac_bt{ margin-top:10px;margin-left:64px;}
+.account .st_prev{ display:none; overflow:hidden}
+.account .st_prev .txt_prev{ width:868px; border:1px solid #dfdfde; border-top:0px; background:#fff; height:166px; line-height:166px; text-align:center;}
+.account .st_prev .txt_prev a{ color:#5da7f5; font-size:30px; text-decoration:underline}
+
+.account .ac_adv ul.adv_cnt li .border_tp_z{ border-top:1px dashed #dfdfde}
+.account .st_prev_pic{display:none;   overflow:hidden}
+.account .st_prev_pic .txt_prev{ width:868px; border:1px solid #dfdfde; border-top:0px; background:#fff; text-align:center; padding-top:20px; padding-bottom:20px;}
+.account .st_prev_pic .txt_prev a{ color:#5da7f5; font-size:30px; text-decoration:underline}
+.dropdown{width:145px; position:relative; float:left}
+.dropdown p{width:150px; height:24px; line-height:24px; padding-left:4px; padding-right:30px;
+background:url(../images/get_code_bg.png) no-repeat; color:#999; cursor:pointer}
+.dropdown ul{width:145px; background:#e8f5fe; margin-top:2px; border:1px solid #a9c9e2; position:absolute; display:none; z-index:2}
+.dropdown ul li{height:24px; line-height:24px; text-indent:10px}
+.dropdown ul li a{display:block; height:24px; color:#807a62; text-decoration:none}
+.dropdown ul li a:hover{background:#c6dbfc; color:#369}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_cd_z span{ float:left; margin-right:10px; margin-left:60px;color:#999;}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_cd_z .get_size,.account .ac_adv ul.adv_cnt li .step_z_01 .adv_cd_z .get_name{ width:100%; height:24px; line-height:24px; margin-top:10px; font-size:14px;}
+.account .ac_adv ul.adv_cnt li .step_z_01 .adv_cd_z .get_size{ margin-top:36px;}
+
+/**************************************************   #009 车险无忧-快速获取推广代码-图片广告代码  结束   ********************************************************************/
+
+
+
+/**************************************************   #010 车险无忧-快速查看佣金收益  开始   ********************************************************************/
+.settle tbody tr td a{ color:#5da7f5}
+.settle tbody tr td a:hover{ text-decoration:underline}
+
+/**************************************************   #010 车险无忧-快速查看佣金收益  结束   ********************************************************************/
+
+
+
+
+
+/**************************************************   #012 车险无忧-联盟简介  开始   ********************************************************************/
+.content{ width:850px; padding-left:20px; padding-right:20px; padding-bottom:100px;}
+.content h2{font-size: 16px;height: 30px;line-height: 30px; font-weight:normal; background:url(../images/men_title_bg.png) no-repeat left bottom;}
+.content .cnt_m{ line-height:32px; margin-top:6px; font-size:14px;}
+
+/**************************************************   #012 车险无忧-联盟简介  结束   ********************************************************************/
+
+
+
+/**************************************************   #017 车险无忧-联盟公告  开始   ********************************************************************/
+
+.content .txt_list{ overflow:hidden}
+.content .txt_list li{ height:34px; line-height:34px; font-size:14px;color:#666666; clear:both }
+.content .txt_list li a{ color:#666666; float:left; font-size:14px;}
+.content .txt_list li a i{ font-style:normal; font-size:16px; margin-right:6px}
+.content .txt_list li a:hover{color:#5da7f5}
+.content .txt_list li span{ float:right}
+
+/**************************************************   #017 车险无忧-联盟公告  结束   ********************************************************************/
+
+
+/**************************************************   #018 车险无忧-联盟公告-文章详情页  开始   ********************************************************************/
+
+.content .txt_det_title{ height:40px; line-height:40px; font-size:20px; text-align:center; margin-top:20px;}
+.content .txt_det_tip{font-size:12px; text-align:center; color:#999}
+.content .txt_det_tip span{ margin-right:14px;}
+
+/**************************************************   #018 车险无忧-联盟公告-文章详情页  结束   ********************************************************************/
+
+
+/**************************************************   #024 车险无忧-用户注册协议  结束   ********************************************************************/
+.agreement_bg{ background:#fff;}
+.agreement_bg section{ background:#fff; margin-top:0px; font-size:14px; line-height:30px; color:#2b2b2b; padding-left:100px; padding-right:100px; width:1000px; margin:0 auto; padding-bottom:100px;}
+.agreement_bg section .agr_title{ font-size:20px; text-align:center; height:74px; line-height:74px; margin-top:30px;}
+.agreement_bg section .agr_top{ color:#5da7f5}
+/**************************************************   #024 车险无忧-用户注册协议  结束   ********************************************************************/
+
+
+
+
+
+/*****************************************************#026 #27 #28 车险无忧-找回密码 开始 BY Lorry***********************************************************/
+.pwd_box{width:1120px;margin:0 auto;}
+.pwd_box .title{margin:100px auto 0; width:950px;font-size:}
+.pwd_box .title h3{font-size:15px;}
+.pwd_box .process{margin:15px auto;width:750px;height:40px;}
+
+.pwd_box .form{margin:65px auto;width:700px;text-align:center; font-size:13px;}
+.pwd_box .form tr{height:60px;}
+.pwd_box .form input{ width:244px; font-size:14px; padding:6px 10px; margin-top:4px; outline:none}
+.pwd_box .form .send_code{margin-left:20px; width:98px; font-size:14px; height:40px;background:#1087d3;border:none;color:#fff;}
+.pwd_box .form .next{margin-top:20px; width:244px; font-size:14px; height:40px;background:#1087d3;border:none;color:#fff;}
+.pwd_box .form .tips{width:300px;background:url(../images/dh1.png) no-repeat left top;margin:70px auto;height:65px;}
+.pwd_box .form .tips .p1{font-size:26px;color:#1087d3;text-align:left;margin-left:90px;line-height:26px;}
+.pwd_box .form .tips .p2{font-size:13px;text-align:left;margin-left:90px;line-height:13px;margin-top:14px;}
+
+
+/*****************************************************#026 #27 #28 车险无忧-找回密码 结束***********************************************************/
+
+
+
+
