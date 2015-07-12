@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.niit.jobrecruitment.model.User" table="user">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="sex" type="boolean">
+            <column name="sex" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" />
+        </property>
+        <property name="workingDate" type="date">
+            <column name="workingDate" />
+        </property>
+        <property name="hometown" type="string">
+            <column name="hometown" />
+        </property>
+        <property name="currentResidence" type="string">
+            <column name="currentResidence" />
+        </property>
+        <property name="telphone" type="string">
+            <column name="telphone" />
+        </property>
+        <property name="maritalStatus" type="int">
+            <column name="maritalStatus" />
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" />
+        </property>
+        <property name="idType" type="int">
+            <column name="idType" />
+        </property>
+        <property name="idNumber" type="string">
+            <column name="idNumber" />
+        </property>
+        <property name="overseas" type="int">
+            <column name="overseas" />
+        </property>
+        <property name="politicalStatus" type="int">
+            <column name="politicalStatus" />
+        </property>
+        <property name="regDate" type="date" update="false">
+            <column name="regDate" />
+        </property>
+    </class>
+</hibernate-mapping>
