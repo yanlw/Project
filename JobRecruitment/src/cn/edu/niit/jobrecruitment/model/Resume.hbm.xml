@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.edu.niit.jobrecruitment.model">
+    <class name="Resume" table="resume">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="commentTitle" type="string">
+            <column name="commentTitle" />
+        </property>
+        <property name="commentContent" type="string">
+            <column name="commentContent" />
+        </property>
+        <property name="employmenttype" type="int">
+            <column name="employmenttype" />
+        </property>
+        <property name="cacheLocationF" type="string">
+            <column name="cacheLocationF" />
+        </property>
+        <property name="jobtypeF" type="string">
+            <column name="jobtypeF" />
+        </property>
+        <property name="desiredSalaryScope" type="int">
+            <column name="desiredSalaryScope" />
+        </property>
+        <property name="currentCareerStatus" type="int">
+            <column name="currentCareerStatus" />
+        </property>
+        <property name="cmpanyName" type="string">
+            <column name="cmpanyName" />
+        </property>
+        <property name="customSubJobtype" type="string">
+            <column name="customSubJobtype" />
+        </property>
+        <property name="workStartDate" type="date">
+            <column name="workStartDate" />
+        </property>
+        <property name="workEndDate" type="date">
+            <column name="workEndDate" />
+        </property>
+        <property name="year" type="string">
+            <column name="year" />
+        </property>
+        <property name="jobDescription" type="string">
+            <column name="jobDescription" />
+        </property>
+        <property name="companytype" type="int">
+            <column name="companytype" />
+        </property>
+        <property name="companySize" type="int">
+            <column name="companySize" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="startDate" />
+        </property>
+        <property name="schoolName" type="string">
+            <column name="schoolName" />
+        </property>
+        <property name="mainMajorF" type="string">
+            <column name="mainMajorF" />
+        </property>
+        <property name="degree" type="int">
+            <column name="degree" />
+        </property>
+        <property name="languages" type="string">
+            <column name="languages" />
+        </property>
+        <property name="literacy" type="string">
+            <column name="literacy" />
+        </property>
+        <property name="spoken" type="string">
+            <column name="spoken" />
+        </property>
+        <property name="certification" type="string">
+            <column name="certification" />
+        </property>
+        <property name="getDate" type="date">
+            <column name="getDate" />
+        </property>
+        <property name="myphoto" type="string">
+            <column name="myphoto" />
+        </property>
+        <property name="lastDate" type="date">
+            <column name="lastDate" />
+        </property>
+        <property name="open" type="boolean">
+            <column name="open" />
+        </property>
+        <many-to-one name="user" class="User" fetch="join">
+            <column name="userId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
