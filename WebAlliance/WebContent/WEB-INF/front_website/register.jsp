@@ -63,19 +63,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$("#email_msg").text("邮箱格式错误，请重新输入").addClass("error_msg");
 			return false;
 		}
-		$.post("checkMemberByEmail.do",$("#email").serialize(),
-				function(data){
-			      if(data==0){
-			    	  $("#email_msg").removeClass();
-						$("#email_msg").text("邮箱已被注册").addClass("error_msg");
-						email_flag=false;
-				      }
-			          if(data==1){
-				    	  $("#email_msg").removeClass();
-							$("#email_msg").text("可以注册的邮箱").addClass("right_msg");
-							email_flag=true;
-					      }
-			});
+		
+		$.post("checkMemberByEmail.do", $("#email").serialize(), function(data) {
+			if(data==0){
+		    	$("#email_msg").removeClass();
+				$("#email_msg").text("邮箱已被注册").addClass("error_msg");
+				email_flag=false;
+			  }
+	          if(data==1){
+		    	$("#email_msg").removeClass();
+				$("#email_msg").text("可以注册的邮箱").addClass("right_msg");
+				email_flag=true;
+			  }
+		});
 		return email_flag;
 	}
 	

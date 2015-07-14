@@ -49,19 +49,12 @@ public class AllianceController implements Serializable {
 
 	// 自增一个规定的提现订单编号
 	public static void increApplyCashNo() {
-		MEMBER_APPLY_CASH_NO++;
+		MEMBER_APPLY_CASH_NO ++;
 	}
 	
 	//注解注入Service
 	@Resource
 	private AllianceService allianceService;
-
-	/*
-	 * 注解注入验证码工具类
-	 */
-	@Resource
-	private ImageCode imageCode;
-
 	/*
 	 * 跳转到首页的操作
 	 */
@@ -80,11 +73,11 @@ public class AllianceController implements Serializable {
 		session.setAttribute("newestMembers", newMembers);
 		Member member = (Member) session.getAttribute("member");
 		if (member == null) {
-			return "front_website/index";
+			return "index";
 		} else {
 			Member m = allianceService.findMemberByUsername(member.getad_member_id());
 			session.setAttribute("member", m);
-			return "front_website/loginSuccess";
+			return "loginSuccess";
 		}
 	}
 	
@@ -118,7 +111,7 @@ public class AllianceController implements Serializable {
 		Member member = (Member) session.getAttribute("member");
 		Member m = allianceService.findMemberByUsername(member.getad_member_id());
 		session.setAttribute("member", m);
-		return "front_website/loginSuccess";
+		return "loginSuccess";
 	}
 
 	/*
@@ -126,7 +119,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toAllianceClass.do")
 	public String toAllianceClass() {
-		return "front_website/allianceClass";
+		return "allianceClass";
 	}
 	
 	/*
@@ -136,7 +129,7 @@ public class AllianceController implements Serializable {
 	public String loginOut(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("member");
-		return "front_website/index";
+		return "index";
 	}
 
 	/*
@@ -144,7 +137,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toApplyCash.do")
 	public String toApplyCash() {
-		return "front_website/withdrawal";
+		return "withdrawal";
 	}
 
 	/*
@@ -175,7 +168,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toModiMember.do")
 	public String toModiMember() {
-		return "front_website/memberModi";
+		return "memberModi";
 	}
 
 	/*
@@ -183,7 +176,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toRegister.do")
 	public String toRegister() {
-		return "front_website/register";
+		return "register";
 	}
 	
 	/*
@@ -191,7 +184,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toBankNumberManager.do")
 	public String toBankNumberManager() {
-		return "front_website/bankNumberManager";
+		return "bankNumberManager";
 	}
 
 	/*
@@ -271,7 +264,7 @@ public class AllianceController implements Serializable {
 				request.getRequestDispatcher("index.do").forward(request,response);
 			}
 		}
-		return "front_website/accountType";
+		return "accountType";
 	}
 
 	@RequestMapping("/detailRegister.do")
@@ -326,7 +319,7 @@ public class AllianceController implements Serializable {
 		}
 		allianceService.addMember(m);
 		session.setAttribute("member", m);
-		return "front_website/index";
+		return "index";
 	}
 	
 	/*
@@ -334,7 +327,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toMainPrivateMessage.do")
 	public String toMainPrivateMessage() {
-		return "front_website/mainPrivateMessage";
+		return "mainPrivateMessage";
 	}
 
 	/*
@@ -342,7 +335,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toMainPublicMessage.do")
 	public String toMainPublicMessage() {
-		return "front_website/mainPublicMessage";
+		return "mainPublicMessage";
 	}
 
 	/*
@@ -368,7 +361,7 @@ public class AllianceController implements Serializable {
 		if (register == null) {
 			return "redirect:index.do";
 		}
-		return "front_website/accountType";
+		return "accountType";
 	}
 
 	/*
@@ -380,20 +373,18 @@ public class AllianceController implements Serializable {
 		if (register == null) {
 			return "redirect:index.do";
 		}
-		return "front_website/emailActivation";
+		return "emailActivation";
 	}
 
 	/*
 	 * 生成验证码的操作
 	 */
 	@RequestMapping("/image_code.do")
-	public void imageCode(HttpServletResponse response, HttpSession session) {
+	public void imageCode(HttpServletResponse response) {
 		OutputStream ops;
 		try {
 			ops = response.getOutputStream();
-			BufferedImage image = imageCode.getImage();
-			String number = imageCode.getNumber();
-			session.setAttribute("code", number);
+			BufferedImage image = ImageCode.getImage();
 			response.setContentType("image/png");
 			ImageIO.write(image, "png", ops);
 			ops.close();
@@ -407,8 +398,8 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/check_code.do")
 	@ResponseBody
-	public int checkCode(String code, HttpSession session) {
-		String number = (String) session.getAttribute("code");
+	public int checkCode(String code) {
+		String number = ImageCode.number;
 		if (number.equalsIgnoreCase(code)) {
 			return 0;
 		} else {
@@ -479,17 +470,17 @@ public class AllianceController implements Serializable {
 		model.addAttribute("applyCash", list);
 		page.setRows(allianceService.findApplyCashRows(page));
 		model.addAttribute("applyCashPage", page);
-		return "front_website/applyCashDetil";
+		return "applyCashDetil";
 	}
 
 	/*
 	 * 获获取推广代码页面跳转的操作
 	 */
-	@RequestMapping(value = "/toGetSpreadCode")
+	@RequestMapping(value = "/toGetSpreadCode.do")
 	public String toGetSpreadCode(Model model) {
 		List<Advertise> list = allianceService.findAdvertise();
 		model.addAttribute("advs", list);
-		return "front_website/getSpreadCode";
+		return "getSpreadCode";
 	}
 
 	/*
@@ -541,12 +532,12 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/checkMemberByEmail.do")
 	@ResponseBody
-	public int checkMemberByEamil(String ad_member_email) {
+	public String checkMemberByEamil(String ad_member_email) {
 		Member member = (Member) allianceService.findMemberByEmail(ad_member_email);
 		if (member == null) {
-			return 1;// 表示可以注册
+			return "1";// 可以注册
 		} else {
-			return 0;// 可以注册
+			return "0";// 已被注册
 		}
 	}
 	
@@ -554,7 +545,7 @@ public class AllianceController implements Serializable {
 	 * 用来验证手机号是否注册的请求操作
 	 */
 	@RequestMapping("/checkMemberByPhone.do")
-	@ResponseBody
+	@ResponseBody()
 	public int checkMemberByPhone(String ad_member_phone) {
 		Member member = (Member) allianceService.findMemberByPhone(ad_member_phone);
 		if (member == null) {
@@ -587,7 +578,7 @@ public class AllianceController implements Serializable {
 		model.addAttribute("income", list);
 		page.setRows(allianceService.findIncomeRows(page));
 		model.addAttribute("incomePage", page);
-		return "front_website/viewIncome";
+		return "viewIncome";
 	}
 	
 	/*
@@ -615,7 +606,7 @@ public class AllianceController implements Serializable {
 		model.addAttribute("incomeDetail", list);
 		page.setRows(allianceService.findIncomeDetailRows(page));
 		model.addAttribute("incomeDetailPage", page);
-		return "front_website/incomeDetail";
+		return "incomeDetail";
 	}
 	
 	/*
@@ -623,7 +614,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toRegisterAgreement.do")
 	public String toRegisterAgreement(){
-		return "front_website/registerAgreement";
+		return "registerAgreement";
 	}
 	
 	/*
@@ -631,7 +622,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/findPwdStepOne.do")
 	public String findPwdStepOne(){
-		return "front_website/findPwdStepOne";
+		return "findPwdStepOne";
 	}
 	
 	/*
@@ -641,7 +632,7 @@ public class AllianceController implements Serializable {
 	public String findPwdStepTwo(Member member,HttpServletRequest request,HttpSession session){
 		String phone = member.getad_member_phone();
 		session.setAttribute("telephone", phone);
-		return "front_website/findPwdStepTwo";
+		return "findPwdStepTwo";
 	}
 	
 	/*
@@ -652,7 +643,7 @@ public class AllianceController implements Serializable {
 		String phone = (String)session.getAttribute("telephone");
 		member.setad_member_phone(phone);
 		allianceService.findPassword(member);
-		return "front_website/findPwdStepThree";
+		return "findPwdStepThree";
 	}
 	
 	/*
@@ -660,7 +651,7 @@ public class AllianceController implements Serializable {
 	 */
 	@RequestMapping("/toConnectUs.do")
 	public String toConnectUs(){
-		return "front_website/connectUs";
+		return "connectUs";
 	}
 	
 }

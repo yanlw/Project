@@ -22,7 +22,7 @@ import com.rrb.alliance.service.AllianceService;
 import com.rrb.alliance.util.MD5Util;
 import com.rrb.alliance.util.MailUtil;
 
-@Service("allianceService")
+@Service(value = "allianceService")
 public class AllianceServiceImpl implements AllianceService {
 
 	// allianceDao注入
@@ -109,7 +109,7 @@ public class AllianceServiceImpl implements AllianceService {
 		allianceDao.deleteUser(email);
 	}
 
-	public void save(Activation activation) {
+	public void saveUser(Activation activation) {
 		allianceDao.saveUser(activation);
 	}
 

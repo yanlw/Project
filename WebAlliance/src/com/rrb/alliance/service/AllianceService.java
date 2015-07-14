@@ -117,7 +117,7 @@ public interface AllianceService {
 	/**
 	 * 保存用户
 	 */
-	public void save(Activation activation);
+	public void saveUser(Activation activation);
 
 	/**
 	 * 根据Email查找用户

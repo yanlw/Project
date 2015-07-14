@@ -27,12 +27,13 @@ public class AllianceInterceptor implements HandlerInterceptor {
 
 	}
 
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
-			Object obj) throws Exception {
+	public boolean preHandle(HttpServletRequest request,
+			HttpServletResponse response, Object obj) throws Exception {
 		HttpSession session = request.getSession();
 		Member member = (Member) session.getAttribute("member");
-		if(member==null){
-			response.sendRedirect(request.getContextPath()+"/alliance/index.do");
+		if (member == null) {
+			response.sendRedirect(request.getContextPath()
+					+ "/alliance/index.do");
 			return false;
 		}
 		return true;

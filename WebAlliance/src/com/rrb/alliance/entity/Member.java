@@ -274,7 +274,7 @@ public class Member implements Serializable {
 	}
 
 	public double getAd_member_total() {
-		return ad_member_total_cash + ad_member_pause_cash;
+		return (ad_member_total_cash + ad_member_pause_cash);
 	}
 
 	public void setAd_member_new_pw(String ad_member_new_pw) {

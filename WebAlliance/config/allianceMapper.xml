@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.rrb.alliance.dao.AllianceDao">
+
+	<select id="findMemberByUsername" parameterType="String"
+		resultType="com.rrb.alliance.entity.Member">
+		select ad_member_name,ad_member_no,ad_member_total_cash,ad_member_pause_cash
+		,ad_member_pw,create_time,update_time,ad_member_bank
+		,ad_member_bank_account,ad_member_bank_number,ad_member_level
+		,ad_member_id,ad_member_sub_bank,ad_member_phone,ad_member_fax,ad_member_check_info,ad_member_check_st
+		,ad_member_tel,ad_member_tel_area,ad_member_tel_ext,ad_member_email,im
+		from ad_member where
+		ad_member_id=#{username}
+	</select>
+	
+	<select id="findMemberById" parameterType="String"
+		resultType="com.rrb.alliance.entity.Member">
+		select
+		ad_member_name,ad_member_no,ad_member_total_cash,ad_member_pause_cash
+		,ad_member_pw,create_time,update_time,ad_member_bank
+		,ad_member_bank_account,ad_member_bank_number,ad_member_level
+		,ad_member_id,ad_member_sub_bank,ad_member_phone,ad_member_fax
+		,ad_member_tel,ad_member_tel_area,ad_member_tel_ext,ad_member_email,im
+		from ad_member where
+		ad_member_no=#{id}
+	</select>
+	
+	<select id="findMemberByNewestTime" parameterType="com.rrb.alliance.entity.page.Page"
+		resultType="com.rrb.alliance.entity.Member">
+		select ad_member_name,ad_member_no,create_time
+		from ad_member order by
+		create_time desc
+		limit #{begin},7
+	</select>
+	
+	<update id="applyCash" parameterType="com.rrb.alliance.entity.MemberApplyMoneyRecord">
+		update ad_member set
+		ad_member_total_cash=ad_member_total_cash-#{member_apply_money_amount},ad_member_pause_cash=ad_member_pause_cash+#{member_apply_fact_money}
+		where ad_member_no=#{ad_member_no}
+	</update>
+	
+	<insert id="addMemberApplyMoneyRecord" parameterType="com.rrb.alliance.entity.MemberApplyMoneyRecord">
+	insert into member_apply_money(
+	member_apply_fact_money,member_apply_tax_money,member_apply_money_amount,create_time,ad_member_id,member_apply_is_invoice,member_apply_cash_no)
+	values(
+	#{member_apply_fact_money,jdbcType=DOUBLE},
+	#{member_apply_tax_money,jdbcType=DOUBLE},
+	#{member_apply_money_amount,jdbcType=DOUBLE},
+	#{create_time,jdbcType=TIMESTAMP},
+	#{ad_member_id,jdbcType=VARCHAR},
+	#{member_apply_is_invoice,jdbcType=VARCHAR},
+	#{member_apply_cash_no,jdbcType=INTEGER}
+	)
+	</insert>
+	
+	<insert id="addMember" parameterType="com.rrb.alliance.entity.Member">
+		insert into ad_member values(
+		#{create_time,jdbcType=TIMESTAMP},
+		#{update_time,jdbcType=TIMESTAMP},
+		#{ad_member_no,jdbcType=INTEGER},
+		#{recommend_no,jdbcType=VARCHAR},
+		#{ad_member_id,jdbcType=VARCHAR},
+		#{ad_member_pw,jdbcType=VARCHAR},
+		#{ad_member_status,jdbcType=CHAR},
+		#{ad_member_name,jdbcType=VARCHAR},
+		#{ad_member_phone,jdbcType=VARCHAR},
+		#{ad_member_fax,jdbcType=VARCHAR},
+		#{ad_member_tel_area,jdbcType=VARCHAR},
+		#{ad_member_tel,jdbcType=VARCHAR},
+		#{ad_member_tel_ext,jdbcType=VARCHAR},
+		#{ad_member_email,jdbcType=VARCHAR},
+		#{ad_member_bank,jdbcType=VARCHAR},
+		#{ad_member_bank_account,jdbcType=VARCHAR},
+		#{ad_member_bank_number,jdbcType=VARCHAR},
+		#{ad_member_type,jdbcType=VARCHAR},
+		#{ad_member_level,jdbcType=VARCHAR},
+		#{ad_member_sub_bank,jdbcType=VARCHAR},
+		#{ad_member_prove1,jdbcType=VARCHAR},
+		#{ad_member_prove2,jdbcType=VARCHAR},
+		#{ad_member_total_cash,jdbcType=DOUBLE},
+		#{ad_member_pause_cash,jdbcType=DOUBLE},
+		#{ad_member_identity_id,jdbcType=VARCHAR},
+		'0',
+		#{ad_member_check_info,jdbcType=VARCHAR},
+		#{im,jdbcType=VARCHAR},
+		#{ad_member_cash_date,jdbcType=DATE},
+		)
+	</insert>
+	
+	<update id="modiMember" parameterType="com.rrb.alliance.entity.Member">
+		update ad_member set
+		ad_member_pw=#{ad_member_new_pw,jdbcType=VARCHAR},
+		ad_member_phone=#{ad_member_phone,jdbcType=VARCHAR},
+		ad_member_tel_area=#{ad_member_tel_area,jdbcType=VARCHAR},
+		ad_member_tel=#{ad_member_tel,jdbcType=VARCHAR},
+		ad_member_tel_ext=#{ad_member_tel_ext,jdbcType=VARCHAR},
+		im=#{im,jdbcType=VARCHAR}
+		where ad_member_no=#{ad_member_no}
+	</update>
+	
+	<update id="modiBank" parameterType="com.rrb.alliance.entity.Member">
+		update ad_member set
+		ad_member_bank=#{ad_member_bank,jdbcType=VARCHAR},
+		ad_member_sub_bank=#{ad_member_sub_bank,jdbcType=VARCHAR},
+		ad_member_bank_number=#{ad_member_bank_number,jdbcType=VARCHAR}
+		where ad_member_no=#{ad_member_no}
+	</update>
+	
+	<select id="findMemberByEmail" parameterType="String"
+		resultType="com.rrb.alliance.entity.Member">
+		select
+		ad_member_name,ad_member_no,ad_member_total_cash,ad_member_pause_cash
+		,ad_member_pw,create_time,update_time,ad_member_bank
+		,ad_member_bank_account,ad_member_bank_number,ad_member_level
+		,ad_member_id,ad_member_sub_bank,ad_member_phone,ad_member_fax
+		,ad_member_tel,ad_member_email
+		from ad_member where
+		ad_member_email=#{email}
+	</select>
+	
+	<select id="findMemberByPhone" parameterType="String"
+		resultType="com.rrb.alliance.entity.Member">
+		select
+		ad_member_name,ad_member_no,ad_member_total_cash,ad_member_pause_cash
+		,ad_member_pw,create_time,update_time,,ad_member_bank
+		,ad_member_bank_account,ad_member_bank_number,ad_member_level
+		,ad_member_id,ad_member_sub_bank,ad_member_phone,ad_member_fax
+		,ad_member_tel,ad_member_email
+		from ad_member where
+		ad_member_phone=#{ad_member_phone}
+	</select>
+	
+	<select id="findApplyCashByPage"
+		parameterType="com.rrb.alliance.entity.page.ApplyCashPage"
+		resultType="com.rrb.alliance.entity.MemberApplyMoneyRecord">
+		select
+		create_time,member_apply_no,member_apply_money_amount,member_apply_is_invoice,member_apply_tax_money,member_apply_fact_money,member_apply_pay_date,member_apply_bank_serial,member_apply_is_pay
+		from member_apply_money
+		where ad_member_id=#{ad_member_id}
+		<if test="starttime!=null">
+           and create_time&gt;=#{starttime}
+        </if>
+        <if test="endtime!=null">
+           and create_time&lt;=#{endtime}
+        </if>
+		order by member_apply_no desc
+		limit #{begin},#{pageSize}
+	</select>
+	
+	<select id="findApplyCashRows" parameterType="com.rrb.alliance.entity.page.ApplyCashPage" resultType="int">
+		select count(*) from member_apply_money
+		where ad_member_id=#{ad_member_id}
+		<if test="starttime!=null">
+           and create_time&gt;=#{starttime}
+        </if>
+        <if test="endtime!=null">
+           and create_time&lt;=#{endtime}
+        </if>
+	</select>
+		
+	<select id="viewIncome" parameterType="com.rrb.alliance.entity.page.IncomePage"
+		resultType="com.rrb.alliance.entity.Order">
+		select
+		apply_cash_no,payments_time,COUNT(ad_order_no) as total,SUM(handlprice) as price
+		from ad_order
+		where ad_member_id=#{ad_member_id} and ad_income_flag='1' 
+		<if test="beginTime!=null">
+           and payments_time&gt;=#{beginTime}
+        </if>
+        <if test="endTime!=null">
+           and payments_time&lt;=#{endTime}
+        </if>
+        group by apply_cash_no
+        order by apply_cash_no desc
+		limit #{begin},#{pageSize}
+	</select>
+	
+	<select id="findIncomeRows" parameterType="com.rrb.alliance.entity.page.IncomePage" resultType="int">
+		select COUNT(*) from (
+			select COUNT(*) from ad_order
+			where ad_member_id=#{ad_member_id} and ad_income_flag='1'
+			<if test="beginTime!=null">
+	           and payments_time&gt;=#{beginTime}
+	        </if>
+	        <if test="endTime!=null">
+	           and payments_time&lt;=#{endTime}
+	        </if>
+			group by apply_cash_no
+		) income
+	</select>
+	
+	<select id="incomeDetail" parameterType="com.rrb.alliance.entity.page.IncomeDetailPage"
+		resultType="com.rrb.alliance.entity.Order">
+		select ad_order_no,create_time,recommend_no,handlprice
+		from ad_order
+		where ad_member_id=#{ad_member_id} and ad_income_flag='1' and apply_cash_no=#{apply_cash_no}
+		<if test="timeBegin!=null">
+           and create_time&gt;=#{timeBegin}
+        </if>
+        <if test="timeEnd!=null">
+           and create_time&lt;=#{timeEnd}
+        </if>
+        limit #{begin},#{pageSize}
+	</select>
+	
+	<select id="findIncomeDetailRows" parameterType="com.rrb.alliance.entity.page.IncomeDetailPage" resultType="int">
+		select COUNT(*) from (
+			select ad_order_no,create_time,recommend_no,handlprice
+			from ad_order
+			where ad_member_id=#{ad_member_id} and ad_income_flag='1' and apply_cash_no=#{apply_cash_no}
+			<if test="timeBegin!=null">
+	           and create_time&gt;=#{timeBegin}
+	        </if>
+	        <if test="timeEnd!=null">
+	           and create_time&lt;=#{timeEnd}
+	        </if>
+		) detail
+	</select>
+	
+	<update id="findPassword" parameterType="com.rrb.alliance.entity.Member">
+		update ad_member set
+		ad_member_pw=#{ad_member_new_pw,jdbcType=VARCHAR}
+		where ad_member_phone=#{ad_member_phone}
+	</update>
+	
+	<select id="findAdvertise" resultType="com.rrb.alliance.entity.Advertise">
+		select adv_name,adv_width,adv_height,adv_imagepath from advertise_manage where adv_st='1'
+	</select>
+	
+	<delete id="deleteUser" parameterType="String">
+		delete from t_user where email=#{email}
+	</delete>
+	
+	<insert id="saveUser" parameterType="com.rrb.alliance.entity.Activation">
+		insert into t_user(email,status,validateCode,registerTime)
+		values(
+			#{email,jdbcType=VARCHAR},
+			#{status,jdbcType=INTEGER},
+			#{validateCode,jdbcType=VARCHAR},
+			#{registerTime,jdbcType=TIMESTAMP}
+		)
+	</insert>	
+	
+	<select id="findByEmail" parameterType="String" resultType="com.rrb.alliance.entity.Activation">
+		select * from t_user where email=#{email} and status='0'
+	</select>
+	
+	<update id="updateUserStatus" parameterType="int">
+		update t_user set status=#{status} where id=#{id}
+	</update>
+</mapper>

@@ -2,7 +2,6 @@ package com.rrb.alliance.dao;
 
 import java.util.List;
 
-import com.rrb.alliance.annotation.MyBatisMapper;
 import com.rrb.alliance.entity.Activation;
 import com.rrb.alliance.entity.Advertise;
 import com.rrb.alliance.entity.Member;
@@ -12,14 +11,7 @@ import com.rrb.alliance.entity.page.ApplyCashPage;
 import com.rrb.alliance.entity.page.IncomeDetailPage;
 import com.rrb.alliance.entity.page.IncomePage;
 import com.rrb.alliance.entity.page.Page;
-
-/**
- * 该接口所有的方法都在mapper包下allianceMapper.xml中实现
- * 
- * @author Administrator
- * 
- */
-@MyBatisMapper
+  
 public interface AllianceDao {
 	/**
 	 * 根据用户名查询会员的方法
